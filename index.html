@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Berry Vibes Studio | CCD Recipe Battle Poem</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link 
+    href="https://fonts.googleapis.com/css2?family=Chewy&family=Quicksand:wght@400;600;700&display=swap" 
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <header class="hero">
+    <p class="eyebrow">Berry Vibes Studio presents</p>
+    <h1>CCD Recipe Battle Poem</h1>
+    <p class="intro">
+      Drag each cozy recipe tile into the vibe it belongs to. 
+      Every match unlocks a line of the poem, turning snacks, doubt, comfort, and confidence into a playful puzzle.
+    </p>
+
+    <nav class="hero-actions">
+      <a href="#game">Start the Puzzle 🍓</a>
+      <a href="#poem">Read the Poem ✨</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="battle-board" id="game">
+      <div class="section-title">
+        <p class="eyebrow">Round One</p>
+        <h2>Drag the CCD tiles into their Berry Vibes battle zones</h2>
+        <p>
+          This is a poem disguised as a recipe game. The recipes are not just food here — they are moods, memories, and little badges of confidence.
+        </p>
+      </div>
+
+      <div class="score-panel">
+        <p>Score: <span id="score">0</span> / <span id="total">0</span></p>
+        <button id="shuffleButton" type="button">Shuffle Tiles 🔀</button>
+        <button id="explodeButton" type="button">Explode Poem 💥</button>
+        <button id="resetButton" type="button">Reset Game 🍓</button>
+      </div>
+
+      <div class="game-grid">
+        <section class="tile-bank" aria-label="Recipe tiles">
+          <h3>CCD Recipe Tiles</h3>
+          <p class="small-note">Drag these into the matching zones.</p>
+
+          <div id="tiles" class="tiles">
+            <article class="tile" draggable="true" data-vibe="breakfast" data-line="Fluffy mornings teach me to begin again.">🥞 McDonald's-style Pumpkin Flaxseed Hotcakes</article>
+            <article class="tile" draggable="true" data-vibe="breakfast" data-line="Sweet toast turns the ordinary into a celebration.">🍞 Pumpkin Cinnamon French Toast</article>
+            <article class="tile" draggable="true" data-vibe="breakfast" data-line="Diner dreams rise slowly, soft and golden.">🥞 Cinnamon Maple Buttermilk Pancakes</article>
+            <article class="tile" draggable="true" data-vibe="bakery" data-line="A cinnamon roll can be a tiny spiral of courage.">🌀 Microwave Cinnamon Rolls</article>
+            <article class="tile" draggable="true" data-vibe="bakery" data-line="A donut is a circle that refuses to be boring.">🍩 Clear-Glaze Microwave Donuts</article>
+            <article class="tile" draggable="true" data-vibe="bakery" data-line="Cake becomes a soft place for big feelings.">🍰 Cinnamon Swirl Oat-Flour Mug Cake</article>
+            <article class="tile" draggable="true" data-vibe="chocolate" data-line="Chocolate makes the quiet parts feel dramatic and bright.">🍫 Chocolate Cinnamon Microwave Ramekin Cake</article>
+            <article class="tile" draggable="true" data-vibe="chocolate" data-line="Brownies turn small cravings into cozy architecture.">🟫 Fudgy CCD Brownies</article>
+            <article class="tile" draggable="true" data-vibe="chocolate" data-line="A mousse bowl whispers: soft can still be powerful.">🥣 Chocolate Mousse Oreo Yogurt Ice Cream</article>
+            <article class="tile" draggable="true" data-vibe="coffee" data-line="Coffee is the soundtrack of the build screen.">☕ Cinnamon Roll Latte</article>
+            <article class="tile" draggable="true" data-vibe="coffee" data-line="Mocha turns a tired afternoon into a comeback.">🍫 Cafe Mocha Shake</article>
+            <article class="tile" draggable="true" data-vibe="coffee" data-line="The cup glows like a save button for my mood.">☕ Hot Mocha Chocolate Coffee</article>
+            <article class="tile" draggable="true" data-vibe="savory" data-line="A tortilla can hold a whole plot twist.">🌯 Arrabbiata Chicken Tortilla Melt</article>
+            <article class="tile" draggable="true" data-vibe="savory" data-line="Pizza flavor joins the battle with crunchy confidence.">🍕 Protein Pizza Tortilla</article>
+            <article class="tile" draggable="true" data-vibe="savory" data-line="A bagel sandwich says comfort can be practical too.">🥯 Bagel Egg Sandwich</article>
+          </div>
+        </section>
+
+        <section class="zones" aria-label="Drop zones">
+          <div class="drop-zone" data-vibe="breakfast">
+            <h3>Breakfast Power 🥞</h3>
+            <p>Soft, warm, morning confidence.</p>
+          </div>
+
+          <div class="drop-zone" data-vibe="bakery">
+            <h3>Bakery Glow 🍩</h3>
+            <p>Cinnamon, glaze, and sweet main-character energy.</p>
+          </div>
+
+          <div class="drop-zone" data-vibe="chocolate">
+            <h3>Chocolate Comfort 🍫</h3>
+            <p>Deep, cozy dessert feelings.</p>
+          </div>
+
+          <div class="drop-zone" data-vibe="coffee">
+            <h3>Coffee Spell ☕</h3>
+            <p>Mocha, latte, and focus magic.</p>
+          </div>
+
+          <div class="drop-zone" data-vibe="savory">
+            <h3>Savory Shield 🌯</h3>
+            <p>Cheesy, crispy, comforting protection.</p>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <section class="poem-panel" id="poem">
+      <div class="section-title">
+        <p class="eyebrow">Unlocked Poem</p>
+        <h2>When the tiles land, the poem blooms</h2>
+      </div>
+
+      <div id="poemLines" class="poem-lines">
+        <p>Drag a tile into the correct zone to unlock the first line. 🍓</p>
+      </div>
+    </section>
+
+    <section class="artist-note">
+      <h2>Artist Statement</h2>
+      <p>
+        This interactive poem turns my CCD recipes into draggable puzzle pieces. 
+        Each recipe represents a different emotional flavor: breakfast confidence, bakery sweetness, chocolate comfort, coffee energy, or savory protection.
+      </p>
+
+      <p>
+        The project is inspired by Berry Vibes Studio because it feels like a playful app where cozy food, design, and personal growth battle together. 
+        The reader has to move the poem by hand, so the act of dragging becomes part of the meaning.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Berry Vibes Studio • CCD Recipe Battle Poem • built with HTML, CSS, and JavaScript 🍓</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
